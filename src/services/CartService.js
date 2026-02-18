@@ -1,4 +1,5 @@
 import CartItem from "../domain/CartItem.js";
+import Wine from "../domain/wine.js";
 
 export default class CartService {
         cart = new Map(); //<wine.id, cartItem>
@@ -11,7 +12,7 @@ export default class CartService {
 
     addToCart(wine, quantity) {
         let cartItem = this.findItem(wine.id);
-        if(cartItem == null) {
+        if(!cartItem) {
             cartItem = new CartItem(wine,quantity);
             this.cart.set(wine.id,cartItem);
         } else {
@@ -21,7 +22,7 @@ export default class CartService {
 
     removeFromCart(wine, quantity) {
         let cartItem = this.findItem(wine.id);
-        if (cartItem !== null) {
+        if (cartItem) {
             return cartItem.removeItem(quantity);
         }
         console.log("[CartService] - Vinho inexistente no carrinho!");
@@ -49,9 +50,11 @@ export default class CartService {
     }
 
     updateTotalPrice() {
+        let cartItem = this.cart.get(id);
         this.totalPrice = 0.0;
-        this.wines.forEach(wine => {
+        cartItem.forEach(wine => {
             this.totalPrice += wine.quantity * wine.price;
+            return this.totalPrice;
         });
     }
 

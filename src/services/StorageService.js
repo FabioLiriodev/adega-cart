@@ -8,11 +8,11 @@ export default class StorageService {
 addToStorage(wine, quantity) {
     let storageItem = this.storage.get(wine.id);
     if(storageItem == undefined) {
-        storageItem = new StorageItem(wine, quantity);
+        storageItem = new StorageItem(wine,quantity,wine.price);
         this.storage.set(wine.id, storageItem);
 
     } else {
-        storageItem.addItem(quantity);
+        storageItem.addItem(quantity, wine.price);
     }
 }
 
@@ -24,5 +24,4 @@ removeFromStorage(wine, quantity) {
         console.log("[removeFromStorage] - Item indisponível no estoque!");
         return -1;
 }
-
 }

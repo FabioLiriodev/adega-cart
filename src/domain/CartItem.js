@@ -3,14 +3,21 @@
 export default class CartItem {
     wine;
     quantity;
+    totalsellingprice;
+    averagesellingprice;
+
 
     constructor (wine, quantity) {
         this.wine = wine;
-        this.quantity = quantity
+        this.quantity = quantity;
+        this.totalsellingprice = (quantity * wine.price) * wine.sellingmargin;
+        this.averagesellingprice = (this.totalsellingprice / this.quantity);
     }
 
     addItem(quantity) {
         this.quantity += quantity;
+        this.totalsellingprice += (quantity + this.averageprice) * this.wine.sellingmargin;
+        this.averagesellingprice = (this.totalsellingprice / this.quantity);
     }
 
     removeItem(quantity) {
@@ -20,6 +27,8 @@ export default class CartItem {
         quantityToRemove = this.quantity;
     }
         this.quantity -= quantityToRemove;
+        this.totalsellingprice -= (this.averageprice * quantity) *this.wine.sellingmargin;
+        this.averageprice = (this.totalsellingprice / quantity); 
         return quantityToRemove;
     }
 }

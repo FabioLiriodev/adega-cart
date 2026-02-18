@@ -10,8 +10,9 @@ export default class Wine {
     origin;
     harvest;
     price;
+    sellingmargin;
 
-    constructor (name, typeOfWine, typeOfGrape, origin, harvest, price) {
+    constructor (name, typeOfWine, typeOfGrape, origin, harvest, price, sellingmargin) {
         this.id = ++counter;
         this.name = name;
         this.typeOfWine = typeOfWine;
@@ -19,6 +20,7 @@ export default class Wine {
         this.origin = origin;
         this.harvest = harvest;
         this.price = price;
+        this.sellingmargin = sellingmargin;
     }
 }
 

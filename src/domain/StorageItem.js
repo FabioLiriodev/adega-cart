@@ -4,15 +4,24 @@ let counter = 0;
 
 export default class StorageItem {
     wine;
-    quantity;
+    quantity; //total quantity
+    price;   //preço médio
+    totalvalue;
 
-    constructor (wine, quantity) {
+
+
+    constructor (wine, quantity, price) {
         this.wine = wine;
+        this.totalvalue = price * quantity;
         this.quantity = quantity;
+        this.price = price;
+        
     }
 
-    addItem(quantity) {
+    addItem(quantity, price) {
         this.quantity += quantity;
+        this.totalvalue += quantity * price;
+        this.price = this.totalvalue / this.quantity;
     }
 
     removeItem(quantity) {
@@ -22,6 +31,7 @@ export default class StorageItem {
             quantityToRemove = this.quantity;
         }
         this.quantity -= quantityToRemove;
+        this.totalvalue -= quantity * this.price;
         return quantityToRemove;
     }
 }

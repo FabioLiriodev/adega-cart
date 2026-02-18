@@ -14,7 +14,7 @@ export default class ShopService {
 
     addToCart(id, quantity) {
         let wine = Database.findById(id);
-        if (wine == null) {
+        if (!wine) {
             console.log("[ShopService] - Erro ao tentar encontrar o produto!");
             return
         }
@@ -27,7 +27,7 @@ export default class ShopService {
 
     removeFromCart(id, quantity) {
         let wine = Database.findById(id);
-        if (wine == null) {
+        if (!wine) {
             console.log("[ShopService] - Erro ao tentar remover o produto!");
             return
         }

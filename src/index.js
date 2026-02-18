@@ -1,6 +1,7 @@
 import ShopService from "./services/ShopService.js";
 import CartService from "./services/CartService.js";
 import StorageService from "./services/StorageService.js";
+import Wine from "./domain/wine.js";
 
 let initialMensage = "";
 initialMensage = initialMensage.concat("\n🍷 Boas vindas ao sistema de gerenciamento de adega! 🍷\n");
@@ -11,29 +12,14 @@ console.log(initialMensage);
     const cartService = new CartService();
     const shopService = new ShopService(storageService, cartService);
 
-    shopService.addToStorage(1, 3);
-    shopService.addToStorage(13, 9);
-    shopService.addToStorage(15, 8);
+    shopService.addToStorage(1,5);
 
-    console.log(storageService.storage);
+    shopService.addToCart(1, 5);
 
-    shopService.addToCart(1,4);
-    shopService.addToCart(13,5);
-    shopService.addToCart(15,7);
-    
-    console.log(storageService.storage);
-    console.log(cartService.cart);
+    console.log(storageService);
+    console.log(cartService);
 
-    shopService.removeFromCart(1,1)
-    shopService.removeFromCart(13,3)
-    shopService.removeFromCart(15,15)
-
-    console.log(storageService.storage);
-    console.log(cartService.cart);
-
-
-
-
+// tarefa: tirar o preço da tabela de vinhos (do objeto vinho) e mudar os construtores e métodos para informar o preço do que você gastou para montar o estoque e o preço do carrinho do cliente.
 
 
 
