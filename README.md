@@ -168,3 +168,4 @@ Esses desafios contribuíram diretamente para o amadurecimento na construção d
 <h2> 💻 Desenvolvedores 💻</h2>
 
 <img src="https://avatars.githubusercontent.com/u/140852220?v=4" width=100><br><sub>Fábio Lirio</sub>
+<img src="https://avatars.githubusercontent.com/u/45768087?v=4" width=100><br><sub>Felipe Mattos</sub>
