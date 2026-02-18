@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Adega Cart](<INSERIR_IMAGEM_OU_GIF_DO_PROJETO>)
+![Adega Cart](<./images/adega-cart.png>)
 
 </div>
 
@@ -101,6 +101,7 @@ O sistema foi projetado para simular o comportamento real de uma adega digital.
 
 ### 🔄 Consistência
 - Não é possível vender mais garrafas do que existem no estoque.
+- Caso o cliente solicite uma quantidade maior do que a disponível no estoque, o carrinho de compras será preenchido com o máximo de garrafas disponível.
 - Toda operação mantém sincronização entre carrinho e inventário.
 
 ---
@@ -125,7 +126,7 @@ Durante o desenvolvimento foram utilizados os seguintes conceitos:
 1️⃣ Clone o repositório:
 
 ```bash
-git clone <URL_DO_REPOSITORIO>
+git clone <https://github.com/FabioLiriodev/adega-cart>
 ```
 
 2️⃣ Acesse a pasta do projeto:
@@ -167,5 +168,14 @@ Esses desafios contribuíram diretamente para o amadurecimento na construção d
 
 <h2> 💻 Desenvolvedores 💻</h2>
 
+<div>
+
 <img src="https://avatars.githubusercontent.com/u/140852220?v=4" width=100><br><sub>Fábio Lirio</sub>
+
+</div>
+
+<div>
+
 <img src="https://avatars.githubusercontent.com/u/45768087?v=4" width=100><br><sub>Felipe Mattos</sub>
+
+</div>
