@@ -28,4 +28,8 @@ export default class Database {
         console.log("Vinho não existente no banco de dados!")
     }
 
+    static insertWine(wine) {
+        Database.WINE_DATABASE.set(wine.id, wine);
+    }
+
 }
