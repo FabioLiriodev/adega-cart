@@ -2,11 +2,12 @@ import ShopService from "./services/ShopService.js";
 import CartService from "./services/CartService.js";
 import StorageService from "./services/StorageService.js";
 import Wine from "./domain/wine.js";
+import chalk from "chalk";
 
-let initialMensage = "";
-initialMensage = initialMensage.concat("\n🍷 Boas vindas ao sistema de gerenciamento de adega! 🍷\n");
+console.log(chalk.white.bgMagentaBright.bold("\n🍷 Boas vindas ao sistema de gerenciamento de adega! 🍷 \n"));
 
-console.log(initialMensage);
+console.log(chalk.white.bgBlue.bold("\n🍾 Informe o produto a ser adicionado no estoque! 🍾 \n"));
+
 
     const storageService = new StorageService();
     const cartService = new CartService();

@@ -4,10 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "node ./src/index.js",
+    "start:watch": "node --watch ./src/index.js",
+    "clean": "cls"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "log-symbols": "^7.0.1"
+  }
 }
