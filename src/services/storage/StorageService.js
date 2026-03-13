@@ -1,8 +1,8 @@
-import Database from "../database/database.js";
-import StorageItem from "../domain/StorageItem.js";
+import Database from "../../database/database.js";
+import StorageItem from "../../domain/StorageItem.js";
 
 export default class StorageService {
-        storage = new Map(); //<wine.id, storageItem>
+        storage = new Map();
 
 
 addToStorage(wine, quantity) {
@@ -25,3 +25,4 @@ removeFromStorage(wine, quantity) {
         return -1;
 }
 }
+

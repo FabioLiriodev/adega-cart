@@ -1,45 +1,31 @@
 import ShopService from "./services/ShopService.js";
 import CartService from "./services/CartService.js";
-import StorageService from "./services/StorageService.js";
+import StorageService from "./services/storage/StorageService.js";
 import Wine from "./domain/wine.js";
+import prompt from "prompt";
 import chalk from "chalk";
-
-import * as readline from 'node:readline/promises';
-import { stdin as input, stdout as output } from 'node:process';
-
-console.log(chalk.white.bgMagentaBright.bold("\n🍷 Boas vindas ao sistema de gerenciamento de adega! 🍷 \n"));
-
-console.log(chalk.white.bgBlue.bold("\n🍾 Informe o produto a ser adicionado no estoque! 🍾 \n"));
-
-const rl = readline.createInterface({ input, output });
-
-async function wineRegister() {
-    
-    let valid = "n";
-    let wine;
-    while(valid !== "S" && valid !== "s") {
-
-    const name = await rl.question(chalk.red('1 - Informe o nome do vinho a ser cadastrado: '));
-    const type = await rl.question(chalk.red('2 - Informe o tipo de vinho: '));
-    const grape = await rl.question(chalk.red('3 - Informe o tipo de uva: '));
-    const origin = await rl.question(chalk.red('4 - Informe a origem do vinho: '));
-    const harvest = await rl.question(chalk.red('5 - Informe a safra do vinho: '));
-    const price = await rl.question(chalk.red('6 - Informe o preço unitário: '));
-    const sellingMargin = await rl.question(chalk.red('7 - Informe a margem de lucro: '));
-
-    wine = new Wine (name, type, grape, origin, harvest, price, sellingMargin);
-    console.table(wine); 
-
-    valid = (await rl.question('\n Confirma os dados de cadastro? S/N ')).trim();  
-}
-
-    rl.close()
-    
-}
-
-await wineRegister();
+import {promptSchemaMain, promptGet} from "./prompt-schema/schema-main.js";
+import wineRegister from "./services/register/register.js";
+import createBatch from "./services/batch-generator/handle.js";
+import handlerRegister from "./services/register/handler-register.js";
+import handlerStorage from "./services/storage/handler-storage.js";
+import { promptGetStorage } from "./prompt-schema/schema-storage.js";
 
 
+async function main() {
+    await handlerRegister();
+    }
+   
+
+
+await main();
+
+export default main;
+
+//modelo
+
+//1) variável de controle = código 1;
+// 2) loop while - atribuir momento de parada e definir quando o loop será encerrado. No loop, você chama os métodos com o switch-case para entrar na compartimentalização adequada.
 
 
 

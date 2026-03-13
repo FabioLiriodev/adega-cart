@@ -4,23 +4,29 @@ let counter = 0;
 
 export default class Wine {
     id;
-    name;
-    typeOfWine;
-    typeOfGrape;
+    label;
+    type;
+    grape;
     origin;
+    region;
     harvest;
     price;
     sellingmargin;
+    alcoholcontent;
+    volume;
 
-    constructor (name, typeOfWine, typeOfGrape, origin, harvest, price, sellingmargin) {
+    constructor (label, type, grape, origin, region, harvest, price, sellingmargin, alcoholcontent, volume) {
         this.id = ++counter;
-        this.name = name;
-        this.typeOfWine = typeOfWine;
-        this.typeOfGrape = typeOfGrape;
+        this.label = label;
+        this.type = type;
+        this.grape = grape;
         this.origin = origin;
+        this.region = region;
         this.harvest = harvest;
         this.price = price;
         this.sellingmargin = sellingmargin;
+        this.alcoholcontent = alcoholcontent;
+        this.volume = volume;
     }
 }
 

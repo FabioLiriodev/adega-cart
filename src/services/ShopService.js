@@ -1,7 +1,7 @@
 import Database from "../database/database.js";
 import Wine from "../domain/wine.js";
 import CartService from "./CartService.js";
-import StorageService from "./StorageService.js";
+import StorageService from "./storage/StorageService.js";
 
 export default class ShopService {
     storageService;
